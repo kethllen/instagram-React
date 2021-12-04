@@ -20,19 +20,6 @@ const sugestoes = [
     {usuario:"smallcutecats",razao:"Segue você"},
 ];
 
-function Story(props){
-    return(
-        <div class="story">
-            <div class="imagem">
-                <img src={`assets/img/${props.usuario}.svg`}/>
-            </div>
-            <div class="usuario">
-                {props.usuario}
-            </div>
-        </div>
-    );
-}
-
 export default function Corpo(){
     return(
         <div class="corpo">
@@ -49,19 +36,33 @@ export default function Corpo(){
         </div>
     );
 }
-function Ion(props){
+
+function Story({usuario}){
     return(
-        <ion-icon name={props.name}></ion-icon>
+        <div class="story">
+            <div class="imagem">
+                <img src={`assets/img/${usuario}.svg`}/>
+            </div>
+            <div class="usuario">
+                {usuario}
+            </div>
+        </div>
     );
 }
-function Sugestao(props){
+
+function Ion({name}){
+    return(
+        <ion-icon name={name}></ion-icon>
+    );
+}
+function Sugestao({usuario, razao}){
     return(
         <div class="sugestao">
             <div class="usuario">
-                <img src={`assets/img/${props.usuario}.svg`}/>
+                <img src={`assets/img/${usuario}.svg`}/>
                 <div class="texto">
-                    <div class="nome">{props.usuario}</div>
-                    <div class="razao">{props.razao}</div>
+                    <div class="nome">{usuario}</div>
+                    <div class="razao">{razao}</div>
                 </div>
             </div>
             <div class="seguir">Seguir</div>

@@ -32,22 +32,22 @@ export default function Posts(){
     );
 }
 
-function Post(props){
+function Post({usuario, img, userCurtida, quantCurtida}){
     return(
                 <div class="post">
-                    <Topo usuario={props.usuario}/>
-                    <Conteudo img={props.img}/>
-                    <Fundo userCurtida={props.userCurtida} quantCurtida={props.quantCurtida}/>
+                    <Topo usuario={usuario}/>
+                    <Conteudo img={img}/>
+                    <Fundo userCurtida={userCurtida} quantCurtida={quantCurtida}/>
                 </div>  
         
     );
 }
-function Topo(props){
+function Topo({usuario}){
     return(
         <div class="topo">
                     <div class="usuario">
-                        <img src={`assets/img/${props.usuario}.svg`}/>
-                        {props.usuario}
+                        <img src={`assets/img/${usuario}.svg`}/>
+                        {usuario}
                     </div>
                     <div class="acoes">
                         {<Ion name={(icones.find((icone)=> icone.tipo=="config")).name}/>}
@@ -55,14 +55,14 @@ function Topo(props){
                 </div>
     );
 }
-function Conteudo(props){
+function Conteudo({img}){
     return(
         <div class="conteudo">
-            <img src={`assets/img/${props.img}`}/>
+            <img src={`assets/img/${img}`}/>
         </div>
     );
 }
-function Fundo(props){
+function Fundo({userCurtida, quantCurtida}){
     return(
         <div class="fundo">
             <div class="acoes">
@@ -76,16 +76,16 @@ function Fundo(props){
             </div>
 
             <div class="curtidas">
-            <   img src={`assets/img/${props.userCurtida}.svg`}/>
+            <   img src={`assets/img/${userCurtida}.svg`}/>
                 <div class="texto">
-                    Curtido por <strong>{props.userCurtida}</strong> e <strong>outras {props.quantCurtida} pessoas</strong>
+                    Curtido por <strong>{userCurtida}</strong> e <strong>outras {quantCurtida} pessoas</strong>
                 </div>
             </div>
         </div>
     );
 }
-function Ion(props){
+function Ion({name}){
     return(
-        <ion-icon name={props.name}></ion-icon>
+        <ion-icon name={name}></ion-icon>
     );
 }

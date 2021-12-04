@@ -8,8 +8,8 @@ export default function FundoMobile(){
     );
 }
 
-function Ion(props){
+function Ion({name}){
     return(
-        <ion-icon name={props.name}></ion-icon>
+        <ion-icon name={name}></ion-icon>
     );
 }
