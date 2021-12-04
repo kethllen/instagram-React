@@ -1,6 +1,6 @@
-import Navbar from "./componentes/navbar";
-import Corpo from "./componentes/corpo";
-import FundoMobile from "./componentes/fundomobile";
+import Navbar from "./componentesPage/navbar";
+import Corpo from "./componentesPage/corpo";
+import FundoMobile from "./componentesPage/fundomobile";
 
 export default function App(){
     return(

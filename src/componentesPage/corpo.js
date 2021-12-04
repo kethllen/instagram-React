@@ -1,4 +1,4 @@
-import Posts from "./posts";
+import Posts from "./componentes/posts";
 
 const stories = [
     {usuario:"9gag"},{usuario:"meowed"},{usuario:"barked"},{usuario:"nathanwpylestrangeplanet"},
@@ -55,6 +55,7 @@ function Ion({name}){
         <ion-icon name={name}></ion-icon>
     );
 }
+
 function Sugestao({usuario, razao}){
     return(
         <div class="sugestao">
